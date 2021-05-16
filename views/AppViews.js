@@ -31,7 +31,7 @@ exports.ConnectAccount = class extends React.Component {
     render() {
         return (
             <div>
-                Hesabınızı bağlarken lütfen bekleyin...
+                Connecting to your account please wait...
             </div>
         );
     }
@@ -52,13 +52,13 @@ exports.FundAccount = class extends React.Component {
         const amt = (this.state || {}).amt || defaultFundAmt;
         return (
             <div>
-                <h2>Hesaba Para Ekle</h2>
+                <h2>Fund your account</h2>
                 <br />
-                Bakiye: {bal} {standardUnit}
+                Balance: {bal} {standardUnit}
                 <hr />
-                Hesabınıza daha fazla {standardUnit} yüklemek ister misiniz?
+                Do you want to add some more {standardUnit} to your account?
                 <br />
-                (Sadece bazı devnetler üzerinde çalışır)
+                (Working for some devnets)
                 <br />
                 <br />
                 <div className="container mt-5">
@@ -82,16 +82,16 @@ exports.FundAccount = class extends React.Component {
                                             parent.fundAccount(amt);
                                         }}
                                     >
-                                        Hesaba Para Aktar
+                                        Fund Account
                                     </button>
                                 ) : (
-                                    <button className="fund-button-passive">Hesaba Para Aktar</button>
+                                    <button className="fund-button-passive">Fund Account</button>
                                 )}
                                 <button
                                     className="fund-button"
                                     onClick={() => parent.skipFundAccount()}
                                 >
-                                    Geç
+                                    Skip
                                 </button>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ exports.DeployerOrAttacher = class extends React.Component {
             <Fragment>
                 <div className="container mt-12">
                     <div className="row j-center">
-                        <h1 className="selectRole">Lütfen bir rol seçin</h1>
+                        <h1 className="selectRole">Select a role</h1>
                     </div>
                 </div>
                 <div className="container mt-5">
@@ -120,11 +120,11 @@ exports.DeployerOrAttacher = class extends React.Component {
                                 className="selectButton"
                                 onClick={() => parent.selectDeployer()}
                             >
-                                Admin
+                                Fortune Teller
                             </button>
 
                             <p className="select-subtext">
-                                Ücreti belirle, kontratı yükle
+                                Set wager, deploy contract
                             </p>
                         </div>
                         <div className="ml-12 text-center">
@@ -132,11 +132,11 @@ exports.DeployerOrAttacher = class extends React.Component {
                                 className="selectButton"
                                 onClick={() => parent.selectAttacher()}
                             >
-                                Oyuncu
+                                User
                             </button>
 
                             <p className="select-subtext">
-                                Adminin kontratına bağlan, oyunu oyna
+                                Attach contract, select a zodiac sign
                             </p>
                         </div>
                     </div>

@@ -10,8 +10,8 @@ exports.Wrapper = class extends React.Component {
         const { content } = this.props;
         return (
             <div className="Player">
-                <h2 style={{ marginLeft: "50px" }} className="header-main-sub">
-                    Oyuncu
+                <h2 className="header-main-sub">
+                    User
           </h2>
                 {content}
             </div>
@@ -27,7 +27,7 @@ exports.Attach = class extends React.Component {
             <Fragment>
                 <div className="container">
                     <div className="row j-center flex-column w-400 m-auto mt-5">
-                        Lütfen kontrat bilgilerini buraya yapıştırın:
+                        Please paste the contract info here:
                         <br />
                         <br />
                         <textarea
@@ -43,7 +43,7 @@ exports.Attach = class extends React.Component {
                             disabled={!ctcInfoStr}
                             onClick={() => parent.attach(ctcInfoStr)}
                         >
-                            Bağlan
+                            Attach
                          </button>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ exports.Attaching = class extends React.Component {
         return (
             <div className="container">
                 <div className="row j-center">
-                    <h3 className="game-finished">Bağlanıyor, lütfen bekleyin...</h3>
+                    <h3 className="game-finished">Attaching..., please wait...</h3>
                 </div>
             </div>
         );
@@ -105,7 +105,7 @@ exports.HamleYapTekil = class extends React.Component{
                 
 
 
-    const { parent, oncekiHamle, bakiye } = this.props;
+    const { parent, oncekiHamle, standardUnit, bakiye } = this.props;
     console.log(oncekiHamle);
     const hamleleriListele = this.state.hamleler[oncekiHamle];
     console.log(hamleleriListele);
@@ -114,7 +114,7 @@ exports.HamleYapTekil = class extends React.Component{
 return ( 
 
 <Fragment>
-    <h4>Güncel Bakiye : {bakiye}</h4>
+    <h4>Current Balance : {bakiye} {standardUnit}</h4>
     <div id="buttonGrid"> 
         <button disabled = {this.state.buttonValue} id="send-all-button" type="button" 
         onClick={() => {parent.hamleYapBelirleTekil(1);}}>aries</button>

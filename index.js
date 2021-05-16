@@ -1,5 +1,3 @@
-// Önyüz
-
 import React from 'react';
 import AppViews from './views/AppViews';
 import DeployerViews from './views/DeployerViews';

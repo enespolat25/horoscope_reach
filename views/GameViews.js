@@ -9,7 +9,7 @@ exports.Wrapper = class extends React.Component {
         const { content } = this.props;
         return (
             <div className="Player">
-                <h2 style={{ marginLeft: "50px" }} className="header-main-sub">
+                <h2 className="header-main-sub">
                     Oyuncu
           </h2>
                 {content}

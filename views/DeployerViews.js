@@ -10,7 +10,7 @@ exports.Wrapper = class extends React.Component {
         const { content } = this.props;
         return (
             <div className="Observer">
-                <h2 style={{ marginLeft: '50px' }} className="header-main-sub">Admin</h2>
+                <h2 className="header-main-sub">Fortune Teller</h2>
                 {content}
             </div>
         );
@@ -38,7 +38,7 @@ exports.UcretBelirle = class extends React.Component {
                                 step="0.000001"
                                 className="observer-input"
                                 type="number"
-                                placeholder="Hamle Ücreti"
+                                placeholder="Wager"
                                 onChange={(e) =>
                                     this.setState({ ucret: e.target.value })
                                 }
@@ -51,7 +51,7 @@ exports.UcretBelirle = class extends React.Component {
                             onClick={() =>
                                 parent.ucretiUygula(ucret)}
                         >
-                            Ücreti Belirle
+                            Set Wager
                         </button>
                     </div>
                 </div>
@@ -68,13 +68,13 @@ exports.Deploy = class extends React.Component {
             <Fragment>
                 <div className="container">
                     <div className="row j-center flex-column w-400 m-auto mt-5">
-                        <p className="subtext">Ücret (hamle başı ödenecek miktar): <strong>{ucret}</strong> {standardUnit}
+                        <p className="subtext">Wager (for each sign): <strong>{ucret}</strong> {standardUnit}
                         </p>
                         <br />
                         <button className="attach-button"
                             onClick={() => parent.deploy()}
                         >
-                            Yükle
+                            Deploy
                         </button>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ exports.Deploying = class extends React.Component {
         return (
             <div className="container">
                 <div className="row j-center">
-                    <h3 className="game-finished">Yükleniyor... Lütfen bekleyin.</h3>
+                    <h3 className="game-finished">Deploying... Please wait.</h3>
                 </div>
             </div>
         );
@@ -115,8 +115,8 @@ exports.WaitingForAttacher = class extends React.Component {
                 <div className="container">
                     <div className="row j-center">
                         <h3 className="game-finished">
-                            Oyuncular bekleniyor...
-                <br />Lütfen bu bilgileri oyunculara iletin
+                            Waiting for users...
+                <br />Share this contract info with users...
                 <pre className="ContractInfo">{ctcInfoStr}</pre>
                             <button
                                 className='attach-button'
@@ -125,7 +125,7 @@ exports.WaitingForAttacher = class extends React.Component {
                                         .then(() => console.log('Succesfully copied!'))
                                         .catch(() => console.log('Error while copying'))
                                 }
-                            >Bilgileri kopyala</button>
+                            >Copy!</button>
                         </h3>
                     </div>
                 </div>
@@ -152,16 +152,16 @@ exports.OyunuBitir = class extends React.Component {
                 <div className="container">
                     <div className="row j-center">
                         <h3 className="game-finished">
-                            Oyun devam ediyor.
+                            Continue...
                             <br />
-                            <p>Bakiye: {bakiye} {standardUnit}</p>
+                            <p>Balance: {bakiye} {standardUnit}</p>
                             <br />
                             <div style={{ textAlign: 'center', marginLeft: '-20px' }}>
                                 <button
                                     className="yes-button mr-1"
                                     onClick={() => parent.oyunuBitirBelirle(true)}
                                 >
-                                    Oyunu Bitir
+                                    End
                             </button>
                             </div>
                         </h3>

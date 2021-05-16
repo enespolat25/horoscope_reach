@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ".././App.css";
+//import ".././App.css";
 //import "./Card.css";
 
 //const signs = require("../../texts/signs.json");
@@ -96,7 +96,6 @@ class Card extends Component {
     }
   }
   render() {
-    const { parent, oncekiHamle, bakiye } = this.props;
     console.log("CARD",this.state.sign);
     return (
       <div className="card" id="card">

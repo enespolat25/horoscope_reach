@@ -18,6 +18,15 @@ body {
   padding: 2rem;
 }
 
+.header-main-sub {
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
 h1 {
   margin: 2rem;
   text-align: center;
